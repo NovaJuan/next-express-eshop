@@ -1,10 +1,13 @@
 {
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint"],
+  "plugins": ["@typescript-eslint","import"],
   "extends": ["standard", "eslint:recommended", "plugin:@typescript-eslint/recommended", "plugin:prettier/recommended"],
   "rules": {
     "@typescript-eslint/no-unused-vars": "error",
-    "@typescript-eslint/consistent-type-definitions": ["error", "type"]
+    "@typescript-eslint/consistent-type-definitions": ["error", "type"],
+    "no-console":["error", { "allow": ["error", "info"] }],
+    "no-unused-vars": "error",
+    "import/order": "error"
   },
   "env": {
     "browser": true,
