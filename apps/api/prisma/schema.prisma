@@ -14,4 +14,17 @@ model Users {
   created_at DateTime?  @default(now()) @db.Timestamp(6)
   updated_at DateTime?  @default(now()) @db.Timestamp(6)
   name       String?    @db.VarChar(255)
+  products   Products[]
+}
+
+model Products {
+  id          Int       @id @default(autoincrement())
+  name        String    @db.VarChar(255)
+  description String
+  price       Decimal   @db.Money
+  discount    Decimal?  @db.Money
+  created_at  DateTime? @default(now()) @db.Timestamp(6)
+  updated_at  DateTime? @default(now()) @db.Timestamp(6)
+  seller_id   Int
+  seller      Users     @relation(fields: [seller_id], references: [id])
 }
