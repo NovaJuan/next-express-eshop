@@ -7,7 +7,8 @@
     "@typescript-eslint/consistent-type-definitions": ["error", "type"],
     "no-console":["error", { "allow": ["error", "info"] }],
     "no-unused-vars": "error",
-    "import/order": "error"
+    "import/order": "error",
+    "prettier/prettier":"error"
   },
   "env": {
     "browser": true,

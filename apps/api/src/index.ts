@@ -1,12 +1,14 @@
-import express from "express"
-import { PORT } from "./config/config"
+import express from 'express'
+import morgan from 'morgan'
+import { PORT } from './config/config'
+import { authRouter } from './modules/auth'
 
 const app = express()
 
-app.get("/", (req, res) => {
-  const test = "hello"
+app.use(morgan('dev'))
+app.use(express.urlencoded({ extended: false }))
+app.use(express.json())
 
-  return res.send(test)
-})
+app.use('/api/auth', authRouter)
 
 app.listen(PORT, () => console.info(`Server Running on port ${PORT}`))

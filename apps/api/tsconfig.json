@@ -3,7 +3,9 @@
   "compilerOptions": {
     "outDir": "./build",
     "baseUrl": "./",
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "moduleResolution": "Node",
+    "experimentalDecorators": true
   },
   "include": ["./src"]
 }
