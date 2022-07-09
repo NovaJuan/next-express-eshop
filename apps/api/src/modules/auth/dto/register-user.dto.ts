@@ -1,5 +1,5 @@
 import { IsEmail, IsString } from 'class-validator'
-import { makeValidateBody } from 'express-class-validator'
+import dtoCreator from '../../../handlers/dtoCreator'
 
 class RegisterUserDto {
   @IsString()
@@ -12,4 +12,4 @@ class RegisterUserDto {
   password: string
 }
 
-export const registerUserDto = makeValidateBody(RegisterUserDto)
+export const registerUserDto = dtoCreator(RegisterUserDto)
