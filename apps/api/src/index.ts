@@ -3,6 +3,7 @@ import morgan from 'morgan'
 import { PORT } from './config/config'
 import errorHandler from './handlers/errorHandler'
 import { authRouter } from './modules/auth'
+import { productsRouter } from './modules/products'
 
 const app = express()
 
@@ -11,6 +12,7 @@ app.use(express.urlencoded({ extended: false }))
 app.use(express.json())
 
 app.use('/api/auth', authRouter)
+app.use('/api/products', productsRouter)
 
 app.use(errorHandler)
 
