@@ -21,6 +21,12 @@ const errorHandler = (
     metadata = { alreadyInUse: err.meta.target }
   }
 
+  if (err.code === 'P2025' || err.name === 'NotFoundError') {
+    message = `Resource doesn't exists.`
+    statusCode = 404
+    metadata = {}
+  }
+
   return res.status(statusCode).json({
     success: false,
     error: message,
